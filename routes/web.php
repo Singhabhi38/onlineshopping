@@ -12,8 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+require 'admin.php';
+Auth::routes();
 Route::get('/', function () {
+    Auth::routes();
     return view('welcome');
 });
-Route::view('/admin', 'admin.dashboard.index');
